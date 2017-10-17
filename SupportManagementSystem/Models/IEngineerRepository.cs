@@ -2,8 +2,8 @@
 
 namespace SupportManagementSystem.Models
 {
-    public interface IEngeneerRepository
+    public interface IEngineerRepository
     {
-        IEnumerable<SupportEngeneer> GetEngeneers();
+        IEnumerable<SupportEngineer> GetEngeneers();
     }
 }

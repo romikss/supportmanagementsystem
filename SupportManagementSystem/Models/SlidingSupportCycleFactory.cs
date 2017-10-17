@@ -5,9 +5,9 @@
         private int _cycle;
         private int _slotsInADay;
         private ISupportSlotRepository _supportSlotRepository;
-        private IEngeneerRepository _engeneerRepository;
+        private IEngineerRepository _engeneerRepository;
 
-        public SlidingSupportCycleFactory(int cycle, int slotsInADay, ISupportSlotRepository supportSlotRepository, IEngeneerRepository engeneerRepository)
+        public SlidingSupportCycleFactory(int cycle, int slotsInADay, ISupportSlotRepository supportSlotRepository, IEngineerRepository engeneerRepository)
         {
             _cycle = cycle;
             _slotsInADay = slotsInADay;

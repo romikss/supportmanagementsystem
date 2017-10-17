@@ -10,10 +10,10 @@ namespace SupportManagementSystem.Controllers
     public class SupportDayController : Controller
     {
         private ISupportSlotRepository _supportSlotRepository;
-        private IEngeneerRepository _engeneerRepository;
+        private IEngineerRepository _engeneerRepository;
         private ISupportCycleFactory _supportCycleFactory;
 
-        public SupportDayController(ISupportSlotRepository supportSlotRepository, IEngeneerRepository engeneerRepository, ISupportCycleFactory supportCycleFactory)
+        public SupportDayController(ISupportSlotRepository supportSlotRepository, IEngineerRepository engeneerRepository, ISupportCycleFactory supportCycleFactory)
         {
             _supportSlotRepository = supportSlotRepository;
             _engeneerRepository = engeneerRepository;

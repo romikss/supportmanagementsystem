@@ -46,7 +46,7 @@ namespace SupportManagementSystem.Models
             }
         }
 
-        public SupportSlot AddSlot(SupportEngeneer engeneer)
+        public SupportSlot AddSlot(SupportEngineer engeneer)
         {
             if (IsFilled)
             {

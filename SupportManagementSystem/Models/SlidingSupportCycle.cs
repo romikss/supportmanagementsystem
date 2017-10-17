@@ -9,14 +9,14 @@ namespace SupportManagementSystem.Models
         private int _cycle;
         private int _slotsInADay;
         private ISupportSlotRepository _supportSlotRepository;
-        private Lazy<List<SupportEngeneer>> _supportEngeneers;
+        private Lazy<List<SupportEngineer>> _supportEngeneers;
         private DateTime _curentDate;
 
-        public SlidingSupportCycle(int cycle, int slotsInADay, ISupportSlotRepository supportSlotRepository, IEngeneerRepository engeneerRepository)
+        public SlidingSupportCycle(int cycle, int slotsInADay, ISupportSlotRepository supportSlotRepository, IEngineerRepository engeneerRepository)
         {
             _cycle = cycle;
             _supportSlotRepository = supportSlotRepository;
-            _supportEngeneers = new Lazy<List<SupportEngeneer>>(() =>
+            _supportEngeneers = new Lazy<List<SupportEngineer>>(() =>
             {
                 return engeneerRepository.GetEngeneers().ToList();
             });
@@ -69,7 +69,7 @@ namespace SupportManagementSystem.Models
             return supportDay;
         }
 
-        private List<SupportEngeneer> GetEngeneersToSelectFrom()
+        private List<SupportEngineer> GetEngeneersToSelectFrom()
         {
             // Key: Support Engeneer, Value: occurance count
             var engeneers = _supportEngeneers.Value.ToDictionary(x => x, x => 0);
@@ -99,12 +99,12 @@ namespace SupportManagementSystem.Models
             return engeneersWhoWorkedLessThanOthers.Except(restrictedEngeneers).ToList();
         }
 
-        private List<SupportEngeneer> GetEngeneersThatCanNotBeAssignedOnCurrentDay()
+        private List<SupportEngineer> GetEngeneersThatCanNotBeAssignedOnCurrentDay()
         {
             var prevSupportDay = _supportSlotRepository.GetSupportDay(_curentDate.AddDays(-1));
             if (prevSupportDay == null)
             {
-                return new List<SupportEngeneer>();
+                return new List<SupportEngineer>();
             }
 
             return prevSupportDay.Slots.Select(x => x.Engeneer).ToList();

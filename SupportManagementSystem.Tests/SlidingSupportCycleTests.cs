@@ -12,7 +12,7 @@ namespace SupportManagementSystem.Tests
         public void AddOneDayTest()
         {
             var supportRepository = new InMemorySupportSlotRepository();
-            var engeneerRepository = new InMemoryEngeneerRepository();
+            var engeneerRepository = new InMemoryEngineerRepository();
             var slidingSupportCycle = new SlidingSupportCycle(14, 2, supportRepository, engeneerRepository);
 
             var day = slidingSupportCycle.GenerateNewDay();
@@ -27,7 +27,7 @@ namespace SupportManagementSystem.Tests
         {
             const int DaysNumber = 20;
             var supportRepository = new InMemorySupportSlotRepository();
-            var engeneerRepository = new InMemoryEngeneerRepository();
+            var engeneerRepository = new InMemoryEngineerRepository();
             var slidingSupportCycle = new SlidingSupportCycle(14, 2, supportRepository, engeneerRepository);
 
             for (var i = 0; i < DaysNumber; ++i)

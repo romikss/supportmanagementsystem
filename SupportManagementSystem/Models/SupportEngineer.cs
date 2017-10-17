@@ -2,7 +2,7 @@
 
 namespace SupportManagementSystem.Models
 {
-    public class SupportEngeneer
+    public class SupportEngineer
     {
         public Guid Id { get; set; }
 
@@ -10,7 +10,7 @@ namespace SupportManagementSystem.Models
 
         public override bool Equals(object obj)
         {
-            var eng = obj as SupportEngeneer;
+            var eng = obj as SupportEngineer;
             if (eng == null)
             {
                 return false;

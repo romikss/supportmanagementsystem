@@ -22,11 +22,11 @@ namespace SupportManagementSystem
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddSingleton<IEngeneerRepository, InMemoryEngeneerRepository>(); // Singleton: I need to keep the data in memory between requests
+            services.AddSingleton<IEngineerRepository, InMemoryEngineerRepository>(); // Singleton: I need to keep the data in memory between requests
             services.AddSingleton<ISupportSlotRepository, InMemorySupportSlotRepository>(); // Singleton: I need to keep the data in memory between requests
             services.AddTransient<ISupportCycleFactory>(sp => 
             {
-                var engeneerRepository = sp.GetRequiredService<IEngeneerRepository>();
+                var engeneerRepository = sp.GetRequiredService<IEngineerRepository>();
                 var supportSlotRepository = sp.GetRequiredService<ISupportSlotRepository>();
                 return new SlidingSupportCycleFactory(int.Parse(Configuration.GetSection("SupportCycle:periodInDays").Value), int.Parse(Configuration.GetSection("SupportCycle:slotsInADay").Value), supportSlotRepository, engeneerRepository);
             });
