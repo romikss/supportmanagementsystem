@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  supportmanagementsystem.web:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
+
+  supportmanagementsystem:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"

@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  supportmanagementsystem.web:
+    image: supportmanagementsystem.web
+    build:
+      context: ./SupportManagementSystem.Web
+      dockerfile: Dockerfile
+
+  supportmanagementsystem:
+    image: supportmanagementsystem
+    build:
+      context: ./SupportManagementSystem
+      dockerfile: Dockerfile

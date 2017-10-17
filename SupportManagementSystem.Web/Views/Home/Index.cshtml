@@ -1,0 +1,24 @@
+﻿@model SupportScheduleModel
+
+<br />
+<table class="table table-striped table-bordered table-hover">
+    <thead>
+        <tr>
+            <th class="text-center">Date</th>
+            <th class="text-center">First support engeneer</th>
+            <th class="text-center">Second support engeneer</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var supportDay in Model.SupportDays)
+        {
+            <tr class="@(@supportDay.Date.Date == SupportManagementSystem.Web.Controllers.HomeController.Today.Date ? "success" : "")">
+                <td class="text-center">@supportDay.Date.ToString("dd.MM.yyyy") @(supportDay.Date.Date == SupportManagementSystem.Web.Controllers.HomeController.Today.Date ? "(Today)" : "")</td>
+                <td class="text-center">@supportDay.FirstEmployee</td>
+                <td class="text-center">@supportDay.SecondEmployee</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
