@@ -1,1 +1,2 @@
-msbuild
+[config]
+command = msbuild
