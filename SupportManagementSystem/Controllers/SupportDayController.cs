@@ -6,7 +6,7 @@ using System.Linq;
 namespace SupportManagementSystem.Controllers
 {
     [Produces("application/json")]
-    [Route("api/supportday")]
+    [Route("api/supportday1")]
     public class SupportDayController : Controller
     {
         private ISupportSlotRepository _supportSlotRepository;
