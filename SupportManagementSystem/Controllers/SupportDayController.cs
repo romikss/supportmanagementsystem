@@ -19,13 +19,6 @@ namespace SupportManagementSystem.Controllers
             _engeneerRepository = engeneerRepository;
             _supportCycleFactory = supportCycleFactory;
         }
-
-        [HttpGet]
-        [Route("temp")]
-        public IActionResult GetTemp()
-        {
-            return new ObjectResult(new {test = "test"});
-        }
         
         // GET api/supportday
         [HttpGet]
