@@ -6,7 +6,7 @@ using System.Linq;
 namespace SupportManagementSystem.Controllers
 {
     [Produces("application/json")]
-    [Route("api/supportdaytest")]
+    [Route("api/supportday")]
     public class SupportDayController : Controller
     {
         private ISupportSlotRepository _supportSlotRepository;
@@ -20,6 +20,13 @@ namespace SupportManagementSystem.Controllers
             _supportCycleFactory = supportCycleFactory;
         }
 
+        [HttpGet]
+        [Route("temp")]
+        public IActionResult GetTemp()
+        {
+            return new ObjectResult(new {test = "test"});
+        }
+        
         // GET api/supportday
         [HttpGet]
         public DayResult Get(DateTime date)
