@@ -1,2 +1,2 @@
 [config]
-command = nuget restore
+command = deploy.cmd
